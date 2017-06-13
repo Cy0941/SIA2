@@ -13,20 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @since: Thinkingbar Web Project 1.0
  */
 @Controller
+@RequestMapping({"/homepage"})
 public class HomeController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String home() {
+        System.out.println("----------home-----------");
         return "home";
     }
 
-    @RequestMapping(value = "/spittles",method = RequestMethod.GET)
-    public void spittles(){
-        System.out.println("spittles");
-    }
-
-    @RequestMapping(value = "/spittler/register",method = RequestMethod.POST)
-    public void register(){
+    @RequestMapping(value = "spittler/register", method = RequestMethod.POST)
+    public void register() {
         System.out.println("register");
     }
 
