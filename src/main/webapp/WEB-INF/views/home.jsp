@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>Welcome to Spitter</h1>
-<a href="<c:url value="/spittles" />">Spittles</a>
-<a href="<c:url value="/spittler/register" />">Register</a>
+<a href="<c:url value="/spittles"/>">Spittles</a>
+<a href="<c:url value="/spittles/register" />">Register</a>
 </body>
 </html>

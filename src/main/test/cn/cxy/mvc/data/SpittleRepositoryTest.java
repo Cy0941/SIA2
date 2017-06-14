@@ -33,8 +33,11 @@ public class SpittleRepositoryTest {
         Mockito.when(mockRepository.findSpittles(Long.MAX_VALUE,20)).thenReturn(expectedSpittles);
 
         SpittleController spittleController = new SpittleController(mockRepository);
-        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(spittleController).setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp")).build();
-        mockMvc.perform(MockMvcRequestBuilders.get("/spittle/")).andExpect(MockMvcResultMatchers.view().name("spittles")).andExpect(MockMvcResultMatchers.model().attributeExists("spittleList"));
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(spittleController)
+                                         .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp")).build();
+        mockMvc.perform(MockMvcRequestBuilders.get("/spittles/"))
+               .andExpect(MockMvcResultMatchers.view().name("spittles"))
+               .andExpect(MockMvcResultMatchers.model().attributeExists("spittleList"));
     }
 
     private List<Spittle> createSpittleList(int count) {
