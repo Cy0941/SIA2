@@ -23,7 +23,7 @@ import java.util.List;
 @Transactional
 public class SpittleRepositoryImpl implements SpittleRepository {
     public List<Spittle> findSpittles(long max, int count) {
-        System.out.println("-----------SpittleRepositoryImpl----------");
+        System.err.println("-----------SpittleRepositoryImpl----------");
         List<Spittle> spittles = new ArrayList<Spittle>();
         for (int i = 0; i < count; i++) {
             spittles.add(new Spittle("Spittle " + i, new Date()));
