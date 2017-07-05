@@ -1,18 +1,15 @@
 package cn.cxy.mvc.web;
 
 import cn.cxy.mvc.data.SpittleRepository;
-import cn.cxy.mvc.model.Spitter;
 import cn.cxy.mvc.model.Spittle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -51,33 +48,5 @@ public class SpittleController {
         model.addAttribute("spittleList", spittles);
         System.out.println("----------spittles----------");
         return "spittles";
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String register() {
-        System.out.println("-------register--------");
-        return "registerForm";
-    }
-
-    /**
-     * cxy @Valid 注解 - 启用在实体类中添加的校验注解
-     * @param spitter
-     * @return
-     */
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String processingRegistration(@Valid Spitter spitter, Errors errors) {
-        if (errors.hasErrors()){
-
-        }
-        spittleRepository.save(spitter);
-        System.out.println("-------register--------");
-        return "redirect:/spittles/" + spitter.getUserName();
-    }
-
-    @RequestMapping(value = "/{userName}", method = RequestMethod.GET)
-    private String showSpitterProfile(@PathVariable String userName, Model model) {
-        Spitter spitter = spittleRepository.findByUsername(userName);
-        model.addAttribute("spitter",spitter);
-        return "profile";
     }
 }

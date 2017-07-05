@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 /**
  * Function: DispatcherServlet 配置
@@ -32,6 +33,8 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         InternalResourceViewResolver resourceViewResolver = new InternalResourceViewResolver();
         resourceViewResolver.setPrefix("/WEB-INF/views/");
         resourceViewResolver.setSuffix(".jsp");
+        //cxy 配置渲染视图类型
+        resourceViewResolver.setViewClass(org.springframework.web.servlet.view.JstlView.class);
         //TODO
         resourceViewResolver.setExposeContextBeansAsAttributes(true);
         return resourceViewResolver;

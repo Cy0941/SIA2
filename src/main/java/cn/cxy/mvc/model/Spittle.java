@@ -1,10 +1,13 @@
 package cn.cxy.mvc.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -18,12 +21,22 @@ import java.util.Date;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class Spittle {
 
-    private final Long id;
-    private final String message;
-    private final Date time;
+    @NotNull
+    private Long id;
+
+    @NotNull
+    private String message;
+
+    @NotNull
+    private Date time;
+
+    @NotNull
     private Double latitude;//纬度
+
+    @NotNull
     private Double longitude;//经度
 
     public Spittle(String message, Date time) {

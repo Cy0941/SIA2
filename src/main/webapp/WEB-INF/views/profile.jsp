@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" session="false" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8" session="false" %>
 <html>
 <head>
     <title>Profile</title>
