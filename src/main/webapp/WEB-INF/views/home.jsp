@@ -8,12 +8,13 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" session="false" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Spitter</title>
 </head>
 <body>
-<h1>Welcome to Spitter</h1>
+<h1><spring:message code="spitter.welcome" text="Welcome"/></h1>
 <a href="<c:url value="/spittles"/>">Spittles</a>
 <a href="<c:url value="/spittles/register" />">Register</a>
 </body>
