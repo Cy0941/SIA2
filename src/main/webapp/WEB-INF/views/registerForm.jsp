@@ -10,16 +10,7 @@
 <html>
 <head>
     <title>Register</title>
-    <style>
-        .error{
-            color:red;
-        }
-
-        div.error{
-            background-color: #ffcccc;
-            border: 2px solid red;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/static/style.css"/>
 </head>
 <body>
 <h1>Register</h1>

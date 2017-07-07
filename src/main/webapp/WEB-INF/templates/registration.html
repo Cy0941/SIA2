@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"><!--声明 Thymeleaf 命名空间-->
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/style.css}"/><!--到 css 的链接-->
+</head>
+<body>
+<form method="post" th:object="${spitter}">
+    <div class="error" th:if="${#fields.hasErrors('*')}">
+        <ul>
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is Incorrect!</li>
+        </ul>
+    </div>
+    <!--FirstName-->
+    <label th:class="${#fields.hasErrors('firstName')}?'error'">FirstName:</label>
+    <input type="text" th:field="*{firstName}" th:class="${#fields.hasErrors('firstName')}?'error'"/><br/>
+    <!--LastName-->
+    <label th:class="${#fields.hasErrors('lastName')}?'error'">LastName:</label>
+    <input type="text" th:class="${#fields.hasErrors('lastName')}?'error'" th:field="*{lastName}"/><br>/
+
+</form>
+</body>
+</html>

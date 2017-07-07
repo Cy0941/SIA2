@@ -1,0 +1,8 @@
+.error {
+    color: red;
+}
+
+div.error {
+    background-color: #ffcccc;
+    border: 2px solid red;
+}
