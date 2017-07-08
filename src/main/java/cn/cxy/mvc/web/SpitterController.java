@@ -1,15 +1,13 @@
 package cn.cxy.mvc.web;
 
 import cn.cxy.mvc.data.SpittleRepository;
+import cn.cxy.mvc.exception.DuplicateException;
 import cn.cxy.mvc.model.Spitter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -61,6 +59,16 @@ public class SpitterController {
         Spitter spitter = spittleRepository.findByUsername(userName);
         model.addAttribute("spitter", spitter);
         return "profile";
+    }
+
+    /**
+     * 会处理该控制器中所有抛出的 DuplicateException 异常
+     * @return
+     */
+    @ExceptionHandler(DuplicateException.class)
+    public String exception(){
+        //TODO handle exception
+        return "exception";
     }
 
 }
