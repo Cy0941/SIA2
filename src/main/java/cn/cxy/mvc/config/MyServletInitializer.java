@@ -1,6 +1,7 @@
 package cn.cxy.mvc.config;
 
 import cn.cxy.mvc.servlet_filter.MyFilter;
+import cn.cxy.mvc.servlet_filter.MyListener;
 import cn.cxy.mvc.servlet_filter.MyServlet;
 import org.springframework.web.WebApplicationInitializer;
 
@@ -28,5 +29,7 @@ public class MyServletInitializer implements WebApplicationInitializer {
         //注册 Filter
         FilterRegistration.Dynamic myFilter = servletContext.addFilter("myFilter", MyFilter.class);
         myFilter.addMappingForUrlPatterns(null,false,"/customer/**");
+        //注册 Listener
+        servletContext.addListener(MyListener.class);
     }
 }
