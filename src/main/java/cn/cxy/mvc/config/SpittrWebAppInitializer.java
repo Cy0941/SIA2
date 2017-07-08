@@ -47,15 +47,19 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 
     /**
      * 通过注册 DispatcherServlet 开启 multipart 的支持
+     *
      * @param registration
      */
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
-        new MultipartConfigElement("tmp/spittr/uploads");
+        //cxy 使用StandardServletMultipartResolver 时必须指定上传时的临时目录
+        MultipartConfigElement multipartConfigElement = new MultipartConfigElement("tmp/spittr/uploads",2097152,4194304,0);
+        registration.setMultipartConfig(multipartConfigElement);
     }
 
     /**
      * 没有必要声明映射路径，该方法返回的所有 Filter 都会映射到 DispatcherServlet 上
+     *
      * @return
      */
     @Override

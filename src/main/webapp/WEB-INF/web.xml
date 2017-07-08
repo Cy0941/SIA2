@@ -23,6 +23,8 @@
     <servlet>
         <servlet-name>appServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--cxy Spring3.1+|Servlet3.0+版本支持此属性-->
+        <!--<mulitpart-config></mulitpart-config>-->
         <init-param>
             <param-name>contextClass</param-name>
             <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
