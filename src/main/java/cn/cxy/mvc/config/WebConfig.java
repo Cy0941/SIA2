@@ -77,7 +77,7 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         resourceViewResolver.setPrefix("/WEB-INF/views/");
         resourceViewResolver.setSuffix(".jsp");
         //cxy 配置渲染视图类型
-        resourceViewResolver.setViewClass(org.springframework.web.servlet.view.JstlView.class);
+        resourceViewResolver.setViewClass(org.springframework.web.servlet_filter.view.JstlView.class);
         //TODO
         resourceViewResolver.setExposeContextBeansAsAttributes(true);
         return resourceViewResolver;
