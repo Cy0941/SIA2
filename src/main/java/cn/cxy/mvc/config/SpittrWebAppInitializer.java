@@ -13,7 +13,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     /**
-     * Spring 具体配置【ContextLoaderListener】
+     * Spring 具体配置 --  applicationContext.xml
      * cxy 主要用于加载驱动后端的中间层及数据组件等
      *
      * @return
@@ -23,7 +23,7 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
     }
 
     /**
-     * SpringMVC 具体配置【DispatcherServlet】
+     * SpringMVC 具体配置 --  spring-dispatcher.xml
      * cxy 用于加载包含web组件的bean，如控制器、视图解析器、处理器映射等
      *
      * @return
