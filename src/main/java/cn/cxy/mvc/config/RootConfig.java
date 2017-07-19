@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 
 @Configuration
-@ComponentScan(basePackages = {"cn.cxy.mvc"},
+@ComponentScan(basePackages = {"cn.cxy.mvc","cn.cxy.spring"},
                excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION,value = EnableWebMvc.class),
                                  @ComponentScan.Filter(type = FilterType.ANNOTATION,value = Controller.class)})
 public class RootConfig {

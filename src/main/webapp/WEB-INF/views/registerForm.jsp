@@ -22,6 +22,8 @@
     LastName:<input type="text" name="lastName"><br/>
     Username:<input type="text" name="userName"><br/>
     Password:<input type="password" name="password"><br/>
+    <%--cxy 防止跨站请求伪造 csrf --%>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <input type="submit" value="Register">
 </form>
 
